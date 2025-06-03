@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: hello-python-cronjob
-  namespace: default
+  namespace: argocd
 spec:
   schedule: "*/2 * * * *"  # Runs every 2 minutes
   jobTemplate:
