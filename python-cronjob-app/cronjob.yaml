@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello-python-cronjob
+  namespace: default
+spec:
+  schedule: "*/2 * * * *"  # Runs every 2 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hello-script
+              image: rupasna02/hello-python-cronjob:latest
+          restartPolicy: OnFailure
